@@ -1,16 +1,22 @@
-# flutter_hackathon_19
+# Flutterrific
 
-A new Flutter project.
+App made during an eight hour hackaton: [#Hack19](https://flutterhackathon.com/).
 
-## Getting Started
+## Idea
+ - Developers may upload their apps to the service.
+ - A user get presented with a submitted app and may like or skip it.
+ - Users has access to an archive of liked apps, as well as skipped ones.
 
-This project is a starting point for a Flutter application.
+## State as of the deadline
+ - Users may browse three predefined apps.
+ - See more details about each app.
+ - Links to GitHub, App Store and Google Play.
 
-A few resources to get you started if this is your first Flutter project:
+## Limitations
+We had many great ideas, but not every idea got implemented due to the time constraint.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+ - No way to mark a submitted app as liked in the app.
+ - No back-end service for users and their liked apps.
+ - No back-end service for fetching and submitting new apps.
+ - No archive.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
