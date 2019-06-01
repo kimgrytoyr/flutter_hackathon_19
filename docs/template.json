@@ -3,6 +3,7 @@
         "id": 1,
         "name": "MetaFlutter",
         "icon": "https://github.com/deven98/MetaFlutter/blob/master/images/app_logo.png",
+        "description": "MetaFlutter allows you to create Flutter layouts using a wide and constantly growing range of Flutter widgets.\n\nBuild out an idea you had instantly, try out something you've never tried before or just use it as a tool for Flutter layout demonstrations.\n\nNo login. Free to use. Open-source.",
         "developer": {
             "name": "deven98",
             "image": "https://avatars3.githubusercontent.com/u/26357843?s=400&v=4"
