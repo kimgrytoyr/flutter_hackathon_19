@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hackathon_19/components/header.dart';
 import 'package:flutter_hackathon_19/models/project.dart';
 
 class ProjectCard extends StatelessWidget {
@@ -47,12 +48,13 @@ class ProjectCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Flex(
+              Header(project: project),
+              /* Flex(
                 direction: Axis.horizontal,
                 children: [
                   _buildHeader(context),
                 ],
-              ),
+              ), */
               Expanded(
                 child: Hero(
                   tag: '0_${project.screenshots[0].image}',

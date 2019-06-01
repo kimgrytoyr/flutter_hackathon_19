@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hackathon_19/components/header.dart';
 import 'package:flutter_hackathon_19/models/project.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -22,47 +23,7 @@ class _DetailsPageState extends State<DetailsPage> {
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
         children: <Widget>[
-          Container(
-            height: 70.0,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Image.network(
-                  project.icon,
-                  fit: BoxFit.cover,
-                ),
-                Container(
-                  padding: EdgeInsets.only(left: 15.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Expanded(
-                        child: Hero(
-                          tag: 'name_${project.id}',
-                          child: Text(
-                            project.name,
-                            textAlign: TextAlign.left,
-                            style: Theme.of(context).textTheme.headline,
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Hero(
-                          tag: 'developer_${project.id}',
-                          child: Text(
-                            project.developer.name,
-                            textAlign: TextAlign.left,
-                            style: Theme.of(context).textTheme.subhead,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
+          Header(project: project),
           Container(
             padding: EdgeInsets.only(top: 20.0),
             height: 350.0,
