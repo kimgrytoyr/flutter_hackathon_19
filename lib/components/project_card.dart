@@ -32,7 +32,7 @@ class ProjectCard extends StatelessWidget {
       onTap: () {
         Navigator.of(context).pushNamed(
           '/details',
-          arguments: Project(name: "Project Name"),
+          arguments: project,
         );
       },
       child: Card(
