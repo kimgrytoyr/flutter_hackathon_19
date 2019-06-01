@@ -17,7 +17,23 @@
         ],
         "screenshots": [
             {
+                "image": "https://github.com/deven98/MetaFlutter/raw/master/screenshots/screenshot1.png",
+                "description": "MetaFlutter is a project to create Flutter layouts on device"
+            },
+            {
                 "image": "https://github.com/deven98/MetaFlutter/raw/master/screenshots/screenshot2.png",
+                "description": "MetaFlutter is a project to create Flutter layouts on device"
+            },
+            {
+                "image": "https://github.com/deven98/MetaFlutter/raw/master/screenshots/screenshot1.png",
+                "description": "MetaFlutter is a project to create Flutter layouts on device"
+            },
+            {
+                "image": "https://github.com/deven98/MetaFlutter/raw/master/screenshots/screenshot2.png",
+                "description": "MetaFlutter is a project to create Flutter layouts on device"
+            },
+            {
+                "image": "https://github.com/deven98/MetaFlutter/raw/master/screenshots/screenshot1.png",
                 "description": "MetaFlutter is a project to create Flutter layouts on device"
             }
         ]
