@@ -74,5 +74,37 @@
                 "description": ""
             }
         ]
+    },
+    {
+        "id": 3,
+        "name": "REQU by Ameba",
+        "icon": "https://lh3.googleusercontent.com/KGJDAhLiKzQIjYwkW8ndGaaZThO3fnx9chS0EVFPJoMzLALhxm2VlxApBG6dNc68HQ=s180-rw",
+        "description": "REQU is a product for those with skills, who want to provide them online for those in need.\n* You can display your skills for sale.\n* You can price them as you want.\n* Customers may purchase your skills.\n* Then you can delight your customer",
+        "developer": {
+            "name": "Ameba",
+            "image": ""
+        },
+        "links": [
+            {
+                "title": "App Store",
+                "url": "https://itunes.apple.com/jp/app/id1459840736",
+                "type": "appstore"
+            },
+            {
+                "title": "Google Play",
+                "url": "https://play.google.com/store/apps/details?id=jp.co.cyberagent.detroit",
+                "type": "googleplay"
+            }
+        ],
+        "screenshots": [
+            {
+                "image": "https://itsallwidgets.com/screenshots/app-640.png?updated_at=2019-05-31%2006:26:25",
+                "description": ""
+            },
+            {
+                "image": "https://itsallwidgets.com/screenshots/app-640-1.png?updated_at=2019-05-31%2006:26:25",
+                "description": ""
+            }
+        ]
     }
 ]
