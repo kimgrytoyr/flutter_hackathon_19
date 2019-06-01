@@ -1,22 +1,24 @@
-{
-    "id": "io3j24io2j32oij",
-    "name": "Flinder",
-    "icon": "https://...",
-    "developer": {
-        "name": "Bodø Dev Meetup",
-        "image": "https://..."
-    },
-    "links": [
-        {
-            "title": "Github",
-            "url": "https://...",
-            "type": "github"
-        }
-    ],
-    "screenshots": [
-        {
-            "image": "https://...",
-            "description": "..."
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "name": "MetaFlutter",
+        "icon": "https://github.com/deven98/MetaFlutter/blob/master/images/app_logo.png",
+        "developer": {
+            "name": "deven98",
+            "image": "https://avatars3.githubusercontent.com/u/26357843?s=400&v=4"
+        },
+        "links": [
+            {
+                "title": "Github",
+                "url": "https://github.com/deven98/MetaFlutter",
+                "type": "github"
+            }
+        ],
+        "screenshots": [
+            {
+                "image": "https://github.com/deven98/MetaFlutter/blob/master/screenshots/screenshot2.png",
+                "description": "MetaFlutter is a project to create Flutter layouts on device"
+            }
+        ]
+    }
+]
