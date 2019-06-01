@@ -1,0 +1,22 @@
+{
+    "id": "io3j24io2j32oij",
+    "name": "Flinder",
+    "icon": "https://...",
+    "developer": {
+        "name": "Bodø Dev Meetup",
+        "image": "https://..."
+    },
+    "links": [
+        {
+            "title": "Github",
+            "url": "https://...",
+            "type": "github"
+        }
+    ],
+    "screenshots": [
+        {
+            "image": "https://...",
+            "description": "..."
+        }
+    ]
+}
