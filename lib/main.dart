@@ -8,14 +8,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flinder',
+      title: 'Flutteriffic',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        textTheme: TextTheme(
+            headline: TextStyle(
+              inherit: true,
+              fontWeight: FontWeight.bold,
+            ),
+            subhead: TextStyle(inherit: true)),
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => OverviewPage(title: 'Flinder'),
+        '/': (context) => OverviewPage(title: 'Flutteriffic'),
         '/details': (context) => DetailsPage(),
       },
     );

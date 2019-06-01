@@ -38,18 +38,23 @@ class _DetailsPageState extends State<DetailsPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Expanded(
-                        child: Text(
-                          project.name,
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              fontSize: 25.0, fontWeight: FontWeight.bold),
+                        child: Hero(
+                          tag: 'name_${project.id}',
+                          child: Text(
+                            project.name,
+                            textAlign: TextAlign.left,
+                            style: Theme.of(context).textTheme.headline,
+                          ),
                         ),
                       ),
                       Expanded(
-                        child: Text(
-                          project.developer.name,
-                          textAlign: TextAlign.left,
-                          style: TextStyle(fontSize: 20.0),
+                        child: Hero(
+                          tag: 'developer_${project.id}',
+                          child: Text(
+                            project.developer.name,
+                            textAlign: TextAlign.left,
+                            style: Theme.of(context).textTheme.subhead,
+                          ),
                         ),
                       ),
                     ],
@@ -92,12 +97,14 @@ class _DetailsPageState extends State<DetailsPage> {
     var index = 0;
     List<Widget> screenshots = project.screenshots.map<Widget>((s) {
       return Padding(
-        padding: EdgeInsets.only(right: 10.0),
-        child: Hero(
-          tag: '${index++}_${s.image}',
-          child: Image.network(s.image),
-        ),
-      );
+          padding: EdgeInsets.only(right: 10.0),
+          child: GestureDetector(
+            onTap: () => _launchURL(s.image),
+            child: Hero(
+              tag: '${index++}_${s.image}',
+              child: Image.network(s.image),
+            ),
+          ));
     }).toList();
 
     return screenshots;

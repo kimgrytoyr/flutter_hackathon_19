@@ -5,12 +5,8 @@ import 'package:flutter_hackathon_19/models/project.dart';
 import '../project_fetcher.dart';
 
 class OverviewPage extends StatefulWidget {
-  OverviewPage({Key key, this.title, this.projectId, this.icon})
-      : super(key: key);
+  OverviewPage({Key key, this.title}) : super(key: key);
   final String title;
-  final String projectId;
-  final String icon;
-  final List<dynamic> screenshots = [{}];
 
   @override
   _OverviewPageState createState() => _OverviewPageState();
@@ -26,6 +22,58 @@ class _OverviewPageState extends State<OverviewPage> {
 
     currentIndex = 0;
     _projectsFuture = ProjectFetcher.fetchProjects();
+  }
+
+  Widget _buildBody(dynamic data) {
+    var index = currentIndex;
+
+    return Stack(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: ProjectCard(data[index]),
+        ),
+        Positioned(
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: Padding(
+            padding: const EdgeInsets.all(30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: 'hero-left',
+                  child: Icon(Icons.arrow_back),
+                  onPressed: currentIndex == 0
+                      ? null
+                      : () {
+                          if (index > 0) {
+                            setState(() {
+                              currentIndex--;
+                            });
+                          }
+                        },
+                ),
+                FloatingActionButton(
+                  heroTag: 'hero-right',
+                  child: Icon(Icons.arrow_forward),
+                  onPressed: index == data.length - 1
+                      ? null
+                      : () {
+                          if (index < data.length - 1) {
+                            setState(() {
+                              currentIndex++;
+                            });
+                          }
+                        },
+                ),
+              ],
+            ),
+          ),
+        )
+      ],
+    );
   }
 
   @override
@@ -52,45 +100,8 @@ class _OverviewPageState extends State<OverviewPage> {
             );
           }
 
-          int index = currentIndex >= snapshot.data.length
-              ? snapshot.data.length - 1
-              : currentIndex;
-
-          return Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: ProjectCard(snapshot.data[index]),
-          );
+          return _buildBody(snapshot.data);
         },
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(left: 40.0, right: 40.0, bottom: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            FloatingActionButton(
-              heroTag: 'hero-left',
-              child: Icon(Icons.arrow_back),
-              onPressed: () {
-                if (currentIndex - 1 >= 0) {
-                  setState(() {
-                    currentIndex--;
-                  });
-                }
-                ;
-              },
-            ),
-            FloatingActionButton(
-              heroTag: 'hero-right',
-              child: Icon(Icons.arrow_forward),
-              onPressed: () {
-                setState(() {
-                  currentIndex++;
-                });
-              },
-            ),
-          ],
-        ),
       ),
     );
   }

@@ -12,14 +12,20 @@ class ProjectCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            project.name,
-            style: Theme.of(context).textTheme.headline,
+          Hero(
+            tag: 'name_${project.id}',
+            child: Text(
+              project.name,
+              style: Theme.of(context).textTheme.headline,
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(top: 4.0, bottom: 16.0),
-            child: Text(project.developer.name,
-                style: Theme.of(context).textTheme.subhead),
+            child: Hero(
+              tag: 'developer_${project.id}',
+              child: Text(project.developer.name,
+                  style: Theme.of(context).textTheme.subhead),
+            ),
           )
         ],
       ),
