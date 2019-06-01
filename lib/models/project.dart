@@ -11,6 +11,7 @@ String projectToJson(Project data) => json.encode(data.toJson());
 class Project {
     int id;
     String name;
+    String description;
     String icon;
     Developer developer;
     List<Link> links;
@@ -19,6 +20,7 @@ class Project {
     Project({
         this.id,
         this.name,
+        this.description,
         this.icon,
         this.developer,
         this.links,
@@ -28,6 +30,7 @@ class Project {
     factory Project.fromJson(Map<String, dynamic> json) => new Project(
         id: json["id"],
         name: json["name"],
+        description: json["description"],
         icon: json["icon"],
         developer: Developer.fromJson(json["developer"]),
         links: new List<Link>.from(json["links"].map((x) => Link.fromJson(x))),
@@ -37,6 +40,7 @@ class Project {
     Map<String, dynamic> toJson() => {
         "id": id,
         "name": name,
+        "description": description,
         "icon": icon,
         "developer": developer.toJson(),
         "links": new List<dynamic>.from(links.map((x) => x.toJson())),
