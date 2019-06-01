@@ -53,7 +53,7 @@ class ProjectCard extends StatelessWidget {
                     image: DecorationImage(
                       fit: BoxFit.fitWidth,
                       alignment: FractionalOffset.topCenter,
-                      image: NetworkImage(project.screenshots[1].image),
+                      image: NetworkImage(project.screenshots[0].image),
                     ),
                   ),
                   child: Container(
