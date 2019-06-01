@@ -31,45 +31,55 @@ class _OverviewPageState extends State<OverviewPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        centerTitle: true,
       ),
       drawer: Drawer(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: FutureBuilder<List<Project>>(
+        future: _projectsFuture,
+        builder: (BuildContext context, AsyncSnapshot<List<Project>> snapshot) {
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          if (snapshot.data == null || snapshot.data.length == 0) {
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[],
+              ),
+            );
+          }
+
+          return Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: ProjectCard(snapshot.data[0]),
+          );
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(left: 40.0, right: 40.0, bottom: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            FutureBuilder<List<Project>>(
-                future: _projectsFuture,
-                builder: (BuildContext context,
-                    AsyncSnapshot<List<Project>> snapshot) {
-                  if (!snapshot.hasData) {
-                    return const Center(child: CircularProgressIndicator());
-                  }
-
-                  if (snapshot.data == null || snapshot.data.length == 0) {
-                    return Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[],
-                      ),
-                    );
-                  }
-
-                  return ProjectCard(snapshot.data[0]);
-                })
+            FloatingActionButton(
+              heroTag: 'hero-left',
+              child: Icon(Icons.star_border),
+              onPressed: () {},
+            ),
+            FloatingActionButton(
+              heroTag: 'hero-middle',
+              child: Icon(Icons.open_in_browser),
+              onPressed: () {},
+            ),
+            FloatingActionButton(
+              heroTag: 'hero-right',
+              child: Icon(Icons.arrow_forward),
+              onPressed: () {},
+            ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).pushNamed(
-            '/details',
-            arguments: Project(name: "Project Name"),
-          );
-          ProjectFetcher.fetchProjects();
-        },
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ),
     );
   }
