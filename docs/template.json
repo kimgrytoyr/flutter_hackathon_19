@@ -13,11 +13,37 @@
                 "title": "Github",
                 "url": "https://github.com/deven98/MetaFlutter",
                 "type": "github"
+            },
+            {
+                "title": "App Store",
+                "url": "https://example.com/",
+                "type": "appstore"
+            },
+            {
+                "title": "Google Play",
+                "url": "https://play.google.com/store/apps/details?id=n.dev.flutter_app_builder",
+                "type": "googleplay"
             }
         ],
         "screenshots": [
             {
+                "image": "https://github.com/deven98/MetaFlutter/raw/master/screenshots/screenshot1.png",
+                "description": "MetaFlutter is a project to create Flutter layouts on device"
+            },
+            {
                 "image": "https://github.com/deven98/MetaFlutter/raw/master/screenshots/screenshot2.png",
+                "description": "MetaFlutter is a project to create Flutter layouts on device"
+            },
+            {
+                "image": "https://github.com/deven98/MetaFlutter/raw/master/screenshots/screenshot1.png",
+                "description": "MetaFlutter is a project to create Flutter layouts on device"
+            },
+            {
+                "image": "https://github.com/deven98/MetaFlutter/raw/master/screenshots/screenshot2.png",
+                "description": "MetaFlutter is a project to create Flutter layouts on device"
+            },
+            {
+                "image": "https://github.com/deven98/MetaFlutter/raw/master/screenshots/screenshot1.png",
                 "description": "MetaFlutter is a project to create Flutter layouts on device"
             }
         ]
