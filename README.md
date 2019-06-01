@@ -20,3 +20,4 @@ We had many great ideas, but not every idea got implemented due to the time cons
  - No back-end service for fetching and submitting new apps.
  - No archive.
 
+![Screenshot](https://raw.githubusercontent.com/kimgrytoyr/flutter_hackathon_19/master/docs/FlutterHackathon19-intro.gif)
