@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hackathon_19/screens/details_screen.dart';
 import 'package:flutter_hackathon_19/screens/overview_screen.dart';
 
-import 'models/project.dart';
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -13,7 +11,7 @@ class MyApp extends StatelessWidget {
       title: 'Flinder',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.blue,
       ),
       initialRoute: '/',
       routes: {
