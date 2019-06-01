@@ -48,13 +48,14 @@ class ProjectCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Header(project: project),
-              /* Flex(
+              // Header(project: project),
+              // SizedBox(height: 16.0),
+              Flex(
                 direction: Axis.horizontal,
                 children: [
                   _buildHeader(context),
                 ],
-              ), */
+              ),
               Expanded(
                 child: Hero(
                   tag: '0_${project.screenshots[0].image}',
