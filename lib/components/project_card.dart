@@ -48,24 +48,27 @@ class ProjectCard extends StatelessWidget {
                 ],
               ),
               Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.fitWidth,
-                      alignment: FractionalOffset.topCenter,
-                      image: NetworkImage(project.screenshots[1].image),
-                    ),
-                  ),
+                child: Hero(
+                  tag: '0_${project.screenshots[0].image}',
                   child: Container(
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.bottomCenter,
-                        end: Alignment.topCenter,
-                        stops: [0.0, 0.35],
-                        colors: [
-                          Colors.black.withAlpha(40),
-                          Colors.transparent
-                        ],
+                      image: DecorationImage(
+                        fit: BoxFit.fitWidth,
+                        alignment: FractionalOffset.topCenter,
+                        image: NetworkImage(project.screenshots[0].image),
+                      ),
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
+                          stops: [0.0, 0.35],
+                          colors: [
+                            Colors.black.withAlpha(40),
+                            Colors.transparent
+                          ],
+                        ),
                       ),
                     ),
                   ),

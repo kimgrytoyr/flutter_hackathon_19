@@ -89,10 +89,14 @@ class _DetailsPageState extends State<DetailsPage> {
   }
 
   List<Widget> _getScreenshots(project) {
+    var index = 0;
     List<Widget> screenshots = project.screenshots.map<Widget>((s) {
       return Padding(
         padding: EdgeInsets.only(right: 10.0),
-        child: Image.network(s.image),
+        child: Hero(
+          tag: '${index++}_${s.image}',
+          child: Image.network(s.image),
+        ),
       );
     }).toList();
 
