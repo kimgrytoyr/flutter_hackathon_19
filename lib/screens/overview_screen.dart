@@ -18,11 +18,13 @@ class OverviewPage extends StatefulWidget {
 
 class _OverviewPageState extends State<OverviewPage> {
   Future<List<Project>> _projectsFuture;
+  int currentIndex;
 
   @override
   void initState() {
     super.initState();
 
+    currentIndex = 0;
     _projectsFuture = ProjectFetcher.fetchProjects();
   }
 
@@ -33,7 +35,6 @@ class _OverviewPageState extends State<OverviewPage> {
         title: Text(widget.title),
         centerTitle: true,
       ),
-      drawer: Drawer(),
       body: FutureBuilder<List<Project>>(
         future: _projectsFuture,
         builder: (BuildContext context, AsyncSnapshot<List<Project>> snapshot) {
@@ -51,9 +52,13 @@ class _OverviewPageState extends State<OverviewPage> {
             );
           }
 
+          int index = currentIndex >= snapshot.data.length
+              ? snapshot.data.length - 1
+              : currentIndex;
+
           return Padding(
             padding: const EdgeInsets.all(20.0),
-            child: ProjectCard(snapshot.data[0]),
+            child: ProjectCard(snapshot.data[index]),
           );
         },
       ),
@@ -65,18 +70,24 @@ class _OverviewPageState extends State<OverviewPage> {
           children: <Widget>[
             FloatingActionButton(
               heroTag: 'hero-left',
-              child: Icon(Icons.star_border),
-              onPressed: () {},
-            ),
-            FloatingActionButton(
-              heroTag: 'hero-middle',
-              child: Icon(Icons.open_in_browser),
-              onPressed: () {},
+              child: Icon(Icons.arrow_back),
+              onPressed: () {
+                if (currentIndex - 1 >= 0) {
+                  setState(() {
+                    currentIndex--;
+                  });
+                }
+                ;
+              },
             ),
             FloatingActionButton(
               heroTag: 'hero-right',
               child: Icon(Icons.arrow_forward),
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  currentIndex++;
+                });
+              },
             ),
           ],
         ),
